@@ -31,34 +31,31 @@ class _MyPortfolioState extends State<MyPortfolio> {
   @override
   Widget build(BuildContext context) {
     isMobile = MediaQuery.of(context).size.width > 700 ? false : true;
-    return Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/sandhiya.png"),
-
-            // fit: BoxFit.cover,
-          ),
-          color: Colors.white),
-      child: Scaffold(
-        appBar: AppBar(
-          title: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text("Flutter Developer"),
-              Text(
-                "Sandhiya Sampath",
-                style: TextStyle(fontSize: 11),
-              ),
-            ],
-          ),
-          actions: isMobile ? null : navItems,
+    return Scaffold(
+      appBar: AppBar(
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Text("Flutter Developer"),
+            Text(
+              "Sandhiya Sampath",
+              style: TextStyle(fontSize: 11),
+            ),
+          ],
         ),
-        drawer: isMobile
-            ? const Drawer(
-                child: NavItemList(),
-              )
-            : null,
-        body: SingleChildScrollView(
+        actions: isMobile ? null : navItems,
+      ),
+      drawer: isMobile
+          ? const Drawer(
+              child: NavItemList(),
+            )
+          : null,
+      body: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+          image: AssetImage("assets/sandhiya.png"),
+        )),
+        child: SingleChildScrollView(
           child: Center(
             child: Column(
               children: [
