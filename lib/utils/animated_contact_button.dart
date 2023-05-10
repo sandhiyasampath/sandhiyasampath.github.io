@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sandhiya_portfolio/theme/text_widget.dart';
+
+import '../theme/index.dart';
+import '../theme/theme.dart';
 
 class AnimatedContact extends StatefulWidget {
   final IconData iconData;
@@ -37,7 +41,7 @@ class _AnimatedContactState extends State<AnimatedContact> {
             12.0,
           ),
           border: Border.all(
-            color: isHovering ? Colors.grey : Colors.white,
+            color: isHovering ? Colors.grey : Colors.white
           ),
         ),
         margin: EdgeInsets.only(top: 10.0),
@@ -49,6 +53,7 @@ class _AnimatedContactState extends State<AnimatedContact> {
                 padding: const EdgeInsets.all(12.0),
                 child: FaIcon(
                   widget.iconData,
+                  color: Colors.blue,
                   size: 20.0,
                 ),
               ),
@@ -61,19 +66,14 @@ class _AnimatedContactState extends State<AnimatedContact> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  widget.title,
-                  style: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                Text(
-                  widget.subtitle,
-                  style: TextStyle(
-                    fontSize: 14.0,
-                  ),
-                ),
+                body1(
+                    text: widget.title,
+                    color: Colors.black,
+                    appTheme: appTheme(fontFamily: FontFamily.medium)),
+                body1(
+                    text: widget.subtitle,
+                    color: Colors.black,
+                    appTheme: appTheme(fontFamily: FontFamily.medium)),
               ],
             ),
           ],

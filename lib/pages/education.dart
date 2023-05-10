@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:sandhiya_portfolio/theme/text_widget.dart';
 import 'package:timelines/timelines.dart';
+
+import '../theme/index.dart';
+import '../theme/theme.dart';
 
 class Education extends StatelessWidget {
   const Education({Key? key}) : super(key: key);
@@ -7,18 +11,11 @@ class Education extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> description = [
-      "10th grade from the government higher secondary school with 87%",
-      "12th grade from Government higher secondary school with 87%",
-      "Bachelor of Degree I perceived in Mathematics from Arignar Anna  Government Arts and Science college with 81% of marks were secured by me",
-      "Percived java certification course from Uttara info solution"
+      "Thiruvalluvar university,Vellore",
+      "Uttara info solution,Bangalore"
     ];
-    List<String> title = [
-      "Secondary School",
-      "Higher Secondary",
-      "Bachelor of Science",
-      "Java course"
-    ];
-    List<String> date = ["2013", "2013 - 2015", "2015 - 2018", "2019"];
+    List<String> title = ["Bachelor of Science", "Java course"];
+    List<String> date = ["2015 - 2018", "2019"];
     return LayoutBuilder(builder: (context, constrain) {
       return Container(
         margin: const EdgeInsets.only(
@@ -38,20 +35,19 @@ class Education extends StatelessWidget {
         padding: const EdgeInsets.all(30.0),
         // height: 700.0,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
-              "Education",
-              style: TextStyle(
-                fontSize: 24.0,
-                fontWeight: FontWeight.w600,
+            Padding(
+              padding: const EdgeInsets.only(left: 64.0),
+              child: heading2(
+                text: "Education Background",
+                appTheme: appTheme(fontFamily: FontFamily.bold),
+                color: Colors.blue,
               ),
             ),
-            //
             const SizedBox(
-              height: 12.0,
+              height: 32.0,
             ),
-            //
             Timeline.tileBuilder(
               shrinkWrap: true,
               scrollDirection: Axis.vertical,
@@ -65,26 +61,20 @@ class Education extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            date[index],
-                            style: const TextStyle(
-                              fontSize: 12.0,
-                              color: Colors.indigo,
-                            ),
+                          subtitle1(
+                            text: title[index],
+                            appTheme: appTheme(fontFamily: FontFamily.bold),
+                            color: Colors.black,
                           ),
-                          Text(
-                            title[index],
-                            style: const TextStyle(
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.w600,
-                            ),
+                          subtitle1(
+                            text: description[index],
+                            appTheme: appTheme(),
+                            color: Colors.black,
                           ),
-                          Text(
-                            description[index],
-                            style: TextStyle(
-                              fontSize: 14.0,
-                              color: Colors.grey.shade700,
-                            ),
+                          subtitle1(
+                            text: date[index],
+                            appTheme: appTheme(fontFamily: FontFamily.semiBold),
+                            color: Colors.blue,
                           ),
                         ],
                       ),

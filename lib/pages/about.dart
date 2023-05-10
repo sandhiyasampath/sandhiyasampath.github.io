@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:sandhiya_portfolio/theme/index.dart';
+import 'package:sandhiya_portfolio/theme/text_widget.dart';
+import 'package:sandhiya_portfolio/theme/theme.dart';
 
-import '../utils/animated_contact_button.dart';
+import '../utils/media_query.dart';
 
 class About extends StatefulWidget {
   const About({super.key});
@@ -14,107 +15,64 @@ class About extends StatefulWidget {
 class _AboutState extends State<About> {
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constrains) {
-      return Container(
-        padding: EdgeInsets.all(24.0),
-        width: constrains.maxWidth < 900
-            ? constrains.maxWidth * 0.9
-            : constrains.maxWidth < 1600
-                ? constrains.maxWidth * 0.3
-                : constrains.maxWidth * 0.2,
-        child: Column(children: [
-          Image.asset(
-            "assets/sandhiya.png",
-            height: 156.0,
-
-            // color: Colors.white,
-          ),
-          const Text(
-            "Sandhiya Sampath",
-            style: TextStyle(
-              fontSize: 30.0,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.0),
-            child: Text(
-              "I am a developer with four years of hands-on experience in developing and am looking for Flutter developer roles across India.",
-              textAlign: TextAlign.center,
-            ),
-          ),
-          SizedBox(
-            height: 24,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: const [
-              Icon(
-                Icons.mail,
+    return Container(
+      padding: EdgeInsets.all(24.0),
+      width: getDeviceWidth(context) < 900
+          ? getDeviceWidth(context) * 0.9
+          : getDeviceWidth(context) < 1600
+              ? getDeviceWidth(context) * 0.3
+              : getDeviceWidth(context) * 0.4,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 24.0, bottom: 24.0),
+            child: heading2(
+                text: "About me",
                 color: Colors.blue,
-              ),
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                  "anbu171298@gmail.com",
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ],
+                appTheme: appTheme(fontFamily: FontFamily.semiBold)),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: const [
-              Icon(
-                Icons.call,
-                color: Colors.blue,
-              ),
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                  "+91 9025300894",
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ],
+          body1(
+              text:
+                  "Experienced Flutter developer with a proven track record of designing, developing, and deploying high-quality cross-platform applications. Highly skilled in Dart programming language and well-versed in the Flutter framework.Collaborative and adaptable, I thrive in team environments, effectively communicating and coordinating with stakeholders to deliver successful projects. Continuously staying updated on the latest Flutter trends and best practices, ",
+              color: Colors.blueGrey,
+              appTheme: appTheme()),
+          Padding(
+            padding: const EdgeInsets.only(top: 16.0, bottom: 24.0),
+            child: body1(
+                text:
+                    "I love reading books, and I find great joy travelling with friends.",
+                color: Colors.blueGrey,
+                appTheme: appTheme()),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: const [
-              Icon(
-                Icons.location_city,
-                color: Colors.blue,
-              ),
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                  "175,Malaiyadivara Street,Nedungunam,\nTiruvannamalai,Tamilnadu(606807).",
-                  textAlign: TextAlign.start,
-                ),
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(bottom: 16.0),
+            child: body1(
+                text: "Key Skills:", color: Colors.blue, appTheme: appTheme()),
           ),
-          AnimatedContact(
-            iconData: FontAwesomeIcons.github,
-            title: "Github",
-            subtitle: "sandhiyasampath",
-            onTap: () async {
-              await launch(
-                  "https://github.com/sandhiyasampath?tab=repositories");
-            },
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0, left: 8.0, bottom: 8.0),
+            child: body1(
+                text: "* Proficient in dart and java",
+                color: Colors.blueGrey,
+                appTheme: appTheme()),
           ),
-          AnimatedContact(
-            iconData: FontAwesomeIcons.linkedin,
-            title: "Linkedin",
-            subtitle: "Sandhiya Sampath",
-            onTap: () async {
-              await launch(
-                  "https://www.linkedin.com/in/sandhiya-sampath-6a5b35220/");
-            },
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0, left: 8.0, bottom: 8.0),
+            child: body1(
+                text: "* Expertise in Flutter framework,git,aws,",
+                color: Colors.blueGrey,
+                appTheme: appTheme()),
           ),
-        ]),
-      );
-    });
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0, left: 8.0, bottom: 8.0),
+            child: body1(
+                text: "* Strong problem-solving and analytical abilities",
+                color: Colors.blueGrey,
+                appTheme: appTheme()),
+          ),
+        ],
+      ),
+    );
   }
 }
