@@ -22,7 +22,7 @@ class _ExperienceState extends State<Experience> {
           heading3(
             text: "Proffesional Experience",
             appTheme: appTheme(fontFamily: FontFamily.bold),
-            color: Colors.black,
+            color: Colors.blue,
           ),
           const SizedBox(height: 50),
           Wrap(

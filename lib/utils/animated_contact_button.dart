@@ -66,14 +66,14 @@ class _AnimatedContactState extends State<AnimatedContact> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                body1(
+                subtitle1(
                     text: widget.title,
-                    color: Colors.black,
-                    appTheme: appTheme(fontFamily: FontFamily.medium)),
-                body1(
+                    color: Colors.blue,
+                    appTheme: appTheme()),
+                subtitle1(
                     text: widget.subtitle,
                     color: Colors.black,
-                    appTheme: appTheme(fontFamily: FontFamily.medium)),
+                    appTheme: appTheme()),
               ],
             ),
           ],

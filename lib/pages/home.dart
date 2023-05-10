@@ -36,83 +36,85 @@ class _HomeState extends State<Home> {
                   ? CrossAxisAlignment.center
                   : CrossAxisAlignment.start,
               children: [
-                isMobile
-                    ? Image.asset(
-                        "assets/sandhiya.png",
-                        height: 156.0,
-                      )
-                    : Container(),
-                FittedBox(
-                  child: heading4(
-                      text: "Sandhiya Sampath",
-                      color: Colors.black,
-                      maxLines: 1,
-                      appTheme: appTheme(fontFamily: FontFamily.semiBold)),
-                ),
-                FittedBox(
-                  child: heading2(
-                      text: "Senior software developer",
-                      color: Colors.blueGrey,
-                      appTheme: appTheme(fontFamily: FontFamily.bold)),
-                ),
-                // Padding(
-                //   padding: const EdgeInsets.symmetric(vertical: 4.0),
-                //   child: body1(
-                //       text:
-                //           "I am a developer with four years of hands-on experience in developing and am looking for Flutter developer roles across India.",
-                //       color: Colors.black,
-                //       appTheme: appTheme()),
-                // ),
-                const SizedBox(
-                  height: 32,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const Icon(
-                      Icons.mail,
-                      color: Colors.blue,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: body1(
-                          text: "anbu171298@gmail.com",
-                          color: Colors.black,
-                          appTheme: appTheme()),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const Icon(
-                      Icons.call,
-                      color: Colors.blue,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: body1(
-                          text: "+91 9025300894",
-                          color: Colors.black,
-                          appTheme: appTheme()),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const Icon(
-                      Icons.location_city,
-                      color: Colors.blue,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: body1(
-                          text: "Tiruvannamalai,Tamilnadu,India.",
-                          color: Colors.black,
-                          appTheme: appTheme()),
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(left: 16.0),
+                  child: Column(
+                      crossAxisAlignment: isMobile
+                          ? CrossAxisAlignment.center
+                          : CrossAxisAlignment.start,
+                      children: [
+                        isMobile
+                            ? Image.asset(
+                                "assets/sandhiya.png",
+                                height: 156.0,
+                              )
+                            : Container(),
+                        FittedBox(
+                          child: heading4(
+                              text: "Sandhiya Sampath",
+                              color: Colors.black,
+                              maxLines: 1,
+                              appTheme:
+                                  appTheme(fontFamily: FontFamily.semiBold)),
+                        ),
+                        FittedBox(
+                          child: heading2(
+                              text: "Senior software developer",
+                              color: Colors.blueGrey,
+                              appTheme: appTheme(fontFamily: FontFamily.bold)),
+                        ),
+                        const SizedBox(
+                          height: 32,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const Icon(
+                              Icons.mail,
+                              color: Colors.blue,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: body1(
+                                  text: "anbu171298@gmail.com",
+                                  color: Colors.black,
+                                  appTheme: appTheme()),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const Icon(
+                              Icons.call,
+                              color: Colors.blue,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: body1(
+                                  text: "+91 9025300894",
+                                  color: Colors.black,
+                                  appTheme: appTheme()),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const Icon(
+                              Icons.location_city,
+                              color: Colors.blue,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: body1(
+                                  text: "Tiruvannamalai,Tamilnadu,India.",
+                                  color: Colors.black,
+                                  appTheme: appTheme()),
+                            ),
+                          ],
+                        ),
+                      ]),
                 ),
                 AnimatedContact(
                   iconData: FontAwesomeIcons.github,

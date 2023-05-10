@@ -27,7 +27,7 @@ class Education extends StatelessWidget {
                 ? constrain.maxWidth * 0.5
                 : constrain.maxWidth * 0.4,
         decoration: BoxDecoration(
-          color: Colors.white,
+          // color: Colors.white,
           borderRadius: BorderRadius.circular(
             20.0,
           ),

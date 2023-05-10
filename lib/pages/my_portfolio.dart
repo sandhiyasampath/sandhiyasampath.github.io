@@ -49,6 +49,7 @@ class _MyPortfolioState extends State<MyPortfolio> {
             )
           : null,
       body: Container(
+        color: Colors.white,
         padding: const EdgeInsets.all(32.0),
         child: SingleChildScrollView(
           child: Column(
@@ -81,7 +82,7 @@ class _MyPortfolioState extends State<MyPortfolio> {
                 ],
               ),
               const SizedBox(
-                height: 100,
+                height: 50,
               ),
               Wrap(
                 children: [
