@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:sandhiya_portfolio/state/app_state.dart';
 import 'pages/my_portfolio.dart';
 
 void main() {
@@ -20,7 +22,11 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: "custom",
       ),
-      home: const MyPortfolio(),
+      home: ChangeNotifierProvider(
+          create: (context) {
+            return AppState();
+          },
+          child: MyPortfolio()),
     );
   }
 }

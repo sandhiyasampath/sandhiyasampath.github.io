@@ -60,7 +60,7 @@ class _AboutState extends State<About> {
           Padding(
             padding: const EdgeInsets.only(top: 8.0, left: 8.0, bottom: 8.0),
             child: body1(
-                text: "* Expertise in Flutter framework,git,aws,",
+                text: "* Expertise in Flutter framework,git,AWS,",
                 color: Colors.blueGrey,
                 appTheme: appTheme()),
           ),

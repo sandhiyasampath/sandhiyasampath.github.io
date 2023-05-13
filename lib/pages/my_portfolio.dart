@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sandhiya_portfolio/pages/about.dart';
+import 'package:sandhiya_portfolio/state/app_state.dart';
 import 'package:sandhiya_portfolio/theme/text_widget.dart';
 import 'package:sandhiya_portfolio/theme/theme.dart';
 import 'package:sandhiya_portfolio/utils/media_query.dart';
-import 'package:sandhiya_portfolio/utils/nav_item_list.dart';
+import 'package:sandhiya_portfolio/utils/navigation_drawer.dart' as drawer;
 import 'package:sandhiya_portfolio/pages/home.dart';
 import 'package:sandhiya_portfolio/pages/education.dart';
 import 'package:sandhiya_portfolio/pages/experience.dart';
@@ -11,25 +12,15 @@ import 'package:sandhiya_portfolio/pages/footer.dart';
 import 'package:sandhiya_portfolio/pages/skills.dart';
 import '../constant/keys.dart';
 import '../theme/index.dart';
+import 'package:provider/provider.dart';
 
-class MyPortfolio extends StatefulWidget {
-  const MyPortfolio({Key? key}) : super(key: key);
-
-  @override
-  State<MyPortfolio> createState() => _MyPortfolioState();
-}
-
-class _MyPortfolioState extends State<MyPortfolio> {
+class MyPortfolio extends StatelessWidget {
   bool isMobile = false;
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
+  late AppState appState;
   @override
   Widget build(BuildContext context) {
     isMobile = MediaQuery.of(context).size.width > 1000 ? false : true;
+    appState = context.read<AppState>();
     return Scaffold(
       appBar: AppBar(
         title: Column(
@@ -41,13 +32,8 @@ class _MyPortfolioState extends State<MyPortfolio> {
                 appTheme: appTheme(fontFamily: FontFamily.semiBold)),
           ],
         ),
-        actions: isMobile ? null : navItems,
+        actions: isMobile ? null : drawer.getnavItems(appState: appState),
       ),
-      drawer: isMobile
-          ? const Drawer(
-              child: NavItemList(),
-            )
-          : null,
       body: Container(
         color: Colors.white,
         padding: const EdgeInsets.all(32.0),
@@ -62,10 +48,8 @@ class _MyPortfolioState extends State<MyPortfolio> {
                           child: Home(
                           key: aboutKey,
                         ))
-                      : Container(
-                          child: Home(
-                            key: aboutKey,
-                          ),
+                      : Home(
+                          key: aboutKey,
                         ),
                   isMobile
                       ? Container()
@@ -86,7 +70,7 @@ class _MyPortfolioState extends State<MyPortfolio> {
               ),
               Wrap(
                 children: [
-                  About(),
+                  const About(),
                   Education(
                     key: educationKey,
                   ),

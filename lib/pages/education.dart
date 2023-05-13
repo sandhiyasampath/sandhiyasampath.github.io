@@ -11,9 +11,10 @@ class Education extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> description = [
-      "Thiruvalluvar university,Vellore",
-      "Uttara info solution,Bangalore"
+      "Thiruvalluvar university,",
+      "Uttara info solution,"
     ];
+    List<String> city = ["Vellore", "Bangalore"];
     List<String> title = ["Bachelor of Science", "Java course"];
     List<String> date = ["2015 - 2018", "2019"];
     return LayoutBuilder(builder: (context, constrain) {
@@ -32,7 +33,7 @@ class Education extends StatelessWidget {
             20.0,
           ),
         ),
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.only(left: 30.0),
         // height: 700.0,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -63,11 +64,17 @@ class Education extends StatelessWidget {
                         children: [
                           subtitle1(
                             text: title[index],
+                            textAlignment: TextAlign.justify,
                             appTheme: appTheme(fontFamily: FontFamily.bold),
                             color: Colors.black,
                           ),
                           subtitle1(
                             text: description[index],
+                            appTheme: appTheme(),
+                            color: Colors.black,
+                          ),
+                          subtitle1(
+                            text: city[index],
                             appTheme: appTheme(),
                             color: Colors.black,
                           ),
