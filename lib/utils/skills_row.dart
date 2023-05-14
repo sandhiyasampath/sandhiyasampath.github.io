@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SkillRow extends StatelessWidget {
-  List<String> skills;
-  SkillRow({super.key, required this.skills});
+ final List<String> skills;
+ const SkillRow({super.key, required this.skills});
 
   @override
   Widget build(BuildContext context) {
